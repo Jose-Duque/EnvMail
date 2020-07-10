@@ -26,6 +26,33 @@ class PlansServicer {
         }
     }
 
+    async update(id, data){
+
+        let errors = {};
+
+        let isValid = this.validate(data, errors);
+
+        if(isValid){
+           try {
+            
+            let plan = await this.getById(id)
+            plan.title = data.title;
+            plan.list = data.list;
+            plan.client = data.client;
+            plan.value = data.value;
+            await plan.save();
+            return true;
+           
+        } catch (error) {
+                
+                return errors;
+           }
+        }else{
+            return errors;
+        }
+       
+    }
+  
     //Criação de metodos
     async loja(plans){// Criação dos planos
         let errors = {};

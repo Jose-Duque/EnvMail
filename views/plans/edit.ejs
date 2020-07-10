@@ -4,7 +4,7 @@
     <div class="container">
         <h2 class="mt-5">Edição de um plano</h2>
         <hr>
-        <form action="/plans/create" method="POST">
+        <form action="/plans/updade" method="POST">
             <div class="card">
                 <div class="card-header">
                     <h4>Editar plano</h4>
@@ -13,6 +13,7 @@
                     <% if(title_msg  && title_msg.length > 0){ %>
                         <p class="alert alert-danger" style="color: red;"><%= title_msg %></p> 
                    <% } %>
+                    <input type="hidden" name="id"  value="<%= edit.id %>">
                     <input value="<%= edit.title%>" type="text" name="title" id="title" class="form-control" placeholder="Título do plano"><br>                   
                     <input value="<%= edit.list %>" type="number" name="list" id="list" placeholder="N* de listas" class="form-control"><br>
                     <input value="<%= edit.client %>" type="number" name="client" id="client" placeholder="N* de clientes" class="form-control"><br>
