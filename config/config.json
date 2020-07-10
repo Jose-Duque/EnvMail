@@ -1,0 +1,23 @@
+{ 
+  "development": {   
+    "username": "root",
+    "password": "joseduque107",
+    "database": "envmail",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "joseduque107",
+    "database": "envmail",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "joseduque107",
+    "database": "envmail",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
