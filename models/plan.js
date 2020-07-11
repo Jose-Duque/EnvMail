@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     list: DataTypes.INTEGER,
     client: DataTypes.INTEGER,
     value: DataTypes.FLOAT,
-    import: DataTypes.BOOLEAN
+    import: DataTypes.BOOLEAN,
+    desativado: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Plan',

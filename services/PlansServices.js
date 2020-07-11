@@ -26,6 +26,21 @@ class PlansServicer {
         }
     }
 
+    async desativado(id){
+        
+        try {
+            
+            let plan = await this.getById(id)
+           plan.desativado = true;
+            await plan.save();
+            return true;
+       
+        } catch (error) {
+            return false
+        }
+        
+    }
+
     async update(id, data){
 
         let errors = {};

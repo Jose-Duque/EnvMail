@@ -14,7 +14,7 @@ class PlansController {
         res.render("plans/edit",{edit, title_msg: req.flash('title_msg'), value_msg: req.flash('value_msg')})
     }
 
-    async update(req, res){
+    async update(req, res){// Para editar e salvr no banco
         var { title, list, client, value, imports, id} = req.body;
 
         let plan = { // Isto daqui é o que vai para o banco de dados
@@ -62,6 +62,12 @@ class PlansController {
             req.flash('value_msg', result.value_msg);
             res.redirect("/admin/plans/create")
         }
+    }
+
+    async desativado(req, res){
+        let id = req.params.id;
+        await PlansServices.desativado(id)
+        res.redirect("/admin/plans");
     }
 }
 

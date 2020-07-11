@@ -12,4 +12,6 @@ router.get("/admin/plans/edit/:id",PlansController.edit);
 
 router.post("/plans/updade", PlansController.update);
 
+router.get("/plans/desativado/:id", PlansController.desativado);
+
 module.exports = router;

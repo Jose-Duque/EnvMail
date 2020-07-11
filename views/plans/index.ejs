@@ -10,6 +10,8 @@
                     <th>Id</th>
                     <th>Nome</th>
                     <th>Preço</th>
+                    <th>Status</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +20,13 @@
                        <td>R$  <%= plan.id %></td>
                        <td>R$ <%= plan.title %></td>
                        <td>R$ <%= plan.value %></td>
+                       <td><% if(plan.desativado == 1){ %>
+                          <p style="color:red;">Desativado</p> 
+                      <% }else { %>
+                            <p style="color: blue;">Ativo</p>
+                      <% } %>
+                       </td>
+                       <td><a class="btn btn-dark" href="/plans/desativado/<%=plan.id%>">Desativar</a></td>
                    </tr>
                 <% } ) %>
             </tbody>
