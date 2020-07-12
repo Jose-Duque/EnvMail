@@ -14,4 +14,6 @@ router.post("/plans/updade", PlansController.update);
 
 router.get("/plans/desativado/:id", PlansController.desativado);
 
+router.get("/plans/ativo/:id", PlansController.ativo)
+
 module.exports = router;

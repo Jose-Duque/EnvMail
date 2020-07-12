@@ -26,7 +26,7 @@ class PlansServicer {
         }
     }
 
-    async desativado(id){
+    async desativado(id){ // Para informar que o plano esta desativado
         
         try {
             
@@ -39,6 +39,19 @@ class PlansServicer {
             return false
         }
         
+    }
+
+    async ativo(id){  // Para informar que o plano esta ativo
+        
+        try {
+            let plan = await this.getById(id);
+            plan.ativo = false;
+            await plan.save();
+            return true;
+        } catch (error) {
+            return false;
+        }
+       
     }
 
     async update(id, data){

@@ -69,6 +69,12 @@ class PlansController {
         await PlansServices.desativado(id)
         res.redirect("/admin/plans");
     }
+
+    async ativo(req, res){
+        let id = req.params.id;
+        await PlansServices.ativo(id);
+        res.redirect("/admin/plans");
+    }
 }
 
 module.exports = new PlansController();

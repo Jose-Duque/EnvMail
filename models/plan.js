@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     client: DataTypes.INTEGER,
     value: DataTypes.FLOAT,
     import: DataTypes.BOOLEAN,
-    desativado: DataTypes.BOOLEAN
+    desativado: DataTypes.BOOLEAN,
+    ativo: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Plan',

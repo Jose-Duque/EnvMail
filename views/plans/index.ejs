@@ -21,12 +21,17 @@
                        <td>R$ <%= plan.title %></td>
                        <td>R$ <%= plan.value %></td>
                        <td><% if(plan.desativado == 1){ %>
+                            
                           <p style="color:red;">Desativado</p> 
                       <% }else { %>
                             <p style="color: blue;">Ativo</p>
                       <% } %>
                        </td>
-                       <td><a class="btn btn-dark" href="/plans/desativado/<%=plan.id%>">Desativar</a></td>
+                       <td>
+                           <a class="btn btn-danger" href="/plans/desativado/<%=plan.id%>">Desativar</a>
+                           <a class="btn btn-primary" href="/plans/ativo/<%=plan.id%>
+                           ">Ativar</a>
+                       </td>
                    </tr>
                 <% } ) %>
             </tbody>
